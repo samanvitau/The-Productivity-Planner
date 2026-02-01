@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Productivity Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>The Productivity Planner</h1>
+        </header>
+
+        <div class="main-content">
+            <div class="person-type-section">
+                <h2>What type of person are you?</h2>
+                <div class="person-types">
+                    <div class="person-type morning" onclick="selectPersonType('morning')">
+                        <div class="title">Morning person</div>
+                        <div class="time">Peak: 6AM to 12PM</div>
+                    </div>
+                    <div class="person-type afternoon" onclick="selectPersonType('afternoon')">
+                        <div class="title">Afternoon person</div>
+                        <div class="time">Peak: 12PM to 6PM</div>
+                    </div>
+                    <div class="person-type evening" onclick="selectPersonType('evening')">
+                        <div class="title">Evening person</div>
+                        <div class="time">Peak: 6PM to 12AM</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-input-section">
+                <h3>Enter task and select priority:</h3>
+                <div class="input-row">
+                    <input type="text" class="task-input" id="taskInput" placeholder="What's on your mind for today?">
+                    <select class="dropdown" id="prioritySelect">
+                        <option value="low">Priority</option>
+                        <option value="low">Low priority</option>
+                        <option value="medium">Medium priority</option>
+                        <option value="high">High priority</option>
+                    </select>
+                    <select class="dropdown" id="categorySelect">
+                        <option value="">Category</option>
+                        <option value="Tests/Homework">Tests/Homework</option>
+                        <option value="Meetings">Meetings</option>
+                        <option value="Chores">Chores</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <button class="add-btn" onclick="addTask()">Add!</button>
+                </div>
+            </div>
+
+            <div class="tasks-container">
+                <div class="task-column morning">
+                    <h4>Morning tasks</h4>
+                    <div id="morningTasks"></div>
+                </div>
+                <div class="task-column afternoon">
+                    <h4>Afternoon tasks</h4>
+                    <div id="afternoonTasks"></div>
+                </div>
+                <div class="task-column evening">
+                    <h4>Evening tasks</h4>
+                    <div id="eveningTasks"></div>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-box total">
+                    <div class="stat-label">Total tasks</div>
+                    <div class="stat-value" id="totalTasks">0</div>
+                </div>
+                <div class="stat-box completed">
+                    <div class="stat-label">Completed</div>
+                    <div class="stat-value" id="completedTasks">0</div>
+                </div>
+                <div class="stat-box streak">
+                    <div class="stat-label">Daily Streak</div>
+                    <div class="stat-value" id="dailyStreak">0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-section">
+            <div class="quote-text">"The question isn't whose going to let me; it's who's going to stop me"</div>
+            <div class="quote-author">-Ada Lovelace, First Computer Programmer</div>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
